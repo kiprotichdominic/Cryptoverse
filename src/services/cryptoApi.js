@@ -6,7 +6,7 @@ const cryptoApiHeaders = {
     'X-RapidAPI-Host': process.env.REACT_APP_CRYPTO_RAPIDAPI_HOST
 }
 
-const baseUrl = "https://coinranking1.p.rapidapi.com"
+const baseUrl = process.env.REACT_APP_CRYPTO_RAPIDAPI_BASE_URL
 
 const createRequest = (url) => ({ url, headers: cryptoApiHeaders })
 

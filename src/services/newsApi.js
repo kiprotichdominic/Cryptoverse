@@ -8,7 +8,7 @@ const cryptoNewsHeaders = {
 }
 
 
-const baseUrl = "https://bing-news-search1.p.rapidapi.com"
+const baseUrl = process.env.REACT_APP_CRYPTO_NEWS_RAPIDAPI_BASE_URL
 
 const createRequest = (url) => ({ url, headers: cryptoNewsHeaders })
 
@@ -22,4 +22,4 @@ export const cryptoNewsApi = createApi({
     })
 })
 
-export const { useGetCryptosQuery } = cryptoApi
+export const { useGetCryptoNewsQuery } = cryptoNewsApi
