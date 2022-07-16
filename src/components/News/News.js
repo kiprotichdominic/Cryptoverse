@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useGetCryptosQuery } from "../../services/cryptoApi"
 import { useGetCryptoNewsQuery } from "../../services/newsApi"
+import Loader from "../Loader"
 
 const { Text, Title } = Typography
 const { Option } = Select
@@ -18,7 +19,7 @@ function News({ simplified }) {
     console.log(cryptoNews)
 
     if (!cryptoNews?.value) {
-        return "Loading..."
+        return <Loader />
     }
 
     return (
