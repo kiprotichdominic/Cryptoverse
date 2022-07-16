@@ -1,6 +1,8 @@
 import { Col, Row, Typography } from "antd"
-import { Chart as ChartJS } from 'chart.js/auto'
 import { Line } from "react-chartjs-2"
+
+import { Chart as ChartJS, } from 'chart.js';
+
 
 const { Title } = Typography
 
@@ -8,9 +10,11 @@ function LineChart({ coinHistory, currentPrice, coinName }) {
     const coinPrice = []
     const coinTimeStamp = []
 
-    for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-        coinTimeStamp.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
-        coinPrice.push(coinHistory?.data?.history[i].price);
+    for (let i = 0; i < coinHistory?.data?.history?.length; i++) {
+        coinTimeStamp.push(
+            new Date(coinHistory.data.history[i].timestamp).toLocaleDateString()
+        );
+        coinPrice.push(coinHistory.data.history[i].price);
     }
     console.log(coinHistory);
     const data = {
