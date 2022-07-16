@@ -10,6 +10,7 @@ function Cryptocurrencies({ simplified }) {
 
     const [cryptos, setCryptos] = useState(cryptosList?.data?.coins)
     const [searchTerm, setSearchTerm] = useState('')
+    console.log(cryptos);
 
     useEffect(() => {
         const filteredData = cryptosList?.data?.coins.filter((coin) => coin.name.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -31,7 +32,7 @@ function Cryptocurrencies({ simplified }) {
             <Row gutter={[32, 32]} className="crypto-card-container">
                 {cryptos?.map((item) => (
                     <Col xs={24} sm={12} lg={6} className="crypto-card" key={item.id}>
-                        <Link to={`/crypto/${item.id}`}>
+                        <Link key={item.uuid} to={`/crypto/${item.uuid}`}>
                             <Card
                                 title={`${item.rank}. ${item.name}`}
                                 extra={<img className="crypto-image" src={item.iconUrl} />}>
